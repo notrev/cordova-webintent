@@ -19,54 +19,54 @@
 
     WebIntent.prototype.startActivity = function(params, success, fail) {
         return cordova.exec(function(args) {
-            success(args);
+            if (typeof success == 'function') success(args);
         }, function(args) {
-            fail(args);
+            if (typeof fail == 'function') fail(args);
         }, 'WebIntent', 'startActivity', [params]);
     };
 
     WebIntent.prototype.hasExtra = function(params, success, fail) {
         return cordova.exec(function(args) {
-            success(args);
+            if (typeof success == 'function') success(args);
         }, function(args) {
-            fail(args);
+            if (typeof fail == 'function') fail(args);
         }, 'WebIntent', 'hasExtra', [params]);
     };
 
     WebIntent.prototype.getUri = function(success, fail) {
         return cordova.exec(function(args) {
-            success(args);
+            if (typeof success == 'function') success(args);
         }, function(args) {
-            fail(args);
+            if (typeof fail == 'function') fail(args);
         }, 'WebIntent', 'getUri', []);
     };
 
     WebIntent.prototype.getExtra = function(params, success, fail) {
         return cordova.exec(function(args) {
-            success(args);
+            if (typeof success == 'function') success(args);
         }, function(args) {
-            fail(args);
+            if (typeof fail == 'function') fail(args);
         }, 'WebIntent', 'getExtra', [params]);
     };
 
 
     WebIntent.prototype.onNewIntent = function(callback) {
         return cordova.exec(function(args) {
-            callback(args);
+            if (typeof callback == 'function') callback(args);
         }, function(args) {
         }, 'WebIntent', 'onNewIntent', []);
     };
 
     WebIntent.prototype.sendBroadcast = function(params, success, fail) {
         return cordova.exec(function(args) {
-            success(args);
+            if (typeof success == 'function') success(args);
         }, function(args) {
-            fail(args);
+            if (typeof fail == 'function') fail(args);
         }, 'WebIntent', 'sendBroadcast', [params]);
     };
 
     window.webintent = new WebIntent();
-    
+
     // backwards compatibility
     window.plugins = window.plugins || {};
     window.plugins.webintent = window.webintent;
